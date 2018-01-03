@@ -1,6 +1,12 @@
 <?php
 
 /* 
+ * RESOLUÇÃO DO PROBLEMA DOJO - TESTE EMPRESA BTIME
+ * 
+ * Autor: Gabriel Freire Braz
+ * Social: @gabrielfreirebraz 
+ * 
+ * 
  * Distribuição de Mictórios
  * 
  * Um problema enfrentado pelos homens no uso de mictórios em banheiros públicos 
@@ -14,26 +20,25 @@
  * uma situação constrangedora.
  */
 
-require './Mictorio.class.php';
+require './Urinal.class.php';
 
 
-/**
- * Total mictórios no banheiro
- */
-$total = 10;
 
-/**
- * Posição dos mijões que estão usando o Mictório
- * OBS: Não colocar posições com valor superior a variável $total_mictorios
- */
-$arr_utilizados = array(3,5,9);
+// Total mictórios no banheiro 
+$total_of_urinals = 13;
+
+// Sequência de mijões que estão usando o Mictório (>1)
+// OBS: Aceito apenas valores INTEIROS e POSITIVOS e < $total!
+$arr_the_sequence_of_urinals_being_used = array(3,5,9);
+
+// Iniciar Mictorio
+$Urinal = new Urinal($total_of_urinals, $arr_the_sequence_of_urinals_being_used);
+$Urinal->calculate_available_urinals();
+
+// Exibir resultado 
+echo "Quantidade de mijões que ainda podem usar os mictórios: ".$Mictorio->get_amount_of_available_urinals();
+echo "Posição dos novos mijões para evitar constrangimento: ".$Mictorio->get_available_urinals_positions();
 
 
-/**
- * 
- */
-$Mictorio = new Mictorio($total, $arr_utilizados);
-$Mictorio->calcular_disponiveis();
 
-echo $Mictorio->get_total_disponiveis();
 
